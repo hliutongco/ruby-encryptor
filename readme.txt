@@ -1,1 +1,1 @@
-This is an encryptor/decryptor program coded in Ruby.
+This is an encryptor/decryptor program coded in Ruby. Made using the tutorial on Jumpstart Lab: http://tutorials.jumpstartlab.com/projects/encryptor.html
