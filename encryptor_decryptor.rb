@@ -1,4 +1,4 @@
-class Encryptor
+class EncryptorDecryptor
 
   def cipher(rotation)
     #Create an array containing the alphabet
@@ -71,6 +71,6 @@ class Encryptor
   end
 end
 
-e = Encryptor.new
+e = EncryptorDecryptor.new
 e.encrypt
 e.decrypt
