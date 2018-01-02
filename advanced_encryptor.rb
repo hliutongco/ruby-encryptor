@@ -22,6 +22,12 @@ class AdvancedEncryptor
     cipher_two = cipher(rotation_two)
     cipher_three = cipher(rotation_three)
 
+    new_letters = encrypt_letters(letters, cipher_one, cipher_two, cipher_three)
+
+    puts new_letters.join
+  end
+
+  def encrypt_letters(letters, cipher_one, cipher_two, cipher_three)
     new_letters = []
 
     #If the letter's index number is a multiple of two, it is encrypted using cipher_one
@@ -38,8 +44,9 @@ class AdvancedEncryptor
       end
     end
 
-    puts new_letters.join
+    new_letters
   end
+
 end
 
 e = AdvancedEncryptor.new
