@@ -9,7 +9,7 @@ class AdvancedEncryptor
   def encrypt
     puts "What is your message?"
     message = gets.chomp
-    letters = message.split("")
+    @letters = message.split("")
     puts "Enter a number between 1 and 90:"
     rotation_one = gets.chomp
     puts "Enter a second number between 1 and 90:"
@@ -18,29 +18,29 @@ class AdvancedEncryptor
     rotation_three = gets.chomp
 
     #This takes the user input and creates three different ciphers
-    cipher_one = cipher(rotation_one)
-    cipher_two = cipher(rotation_two)
-    cipher_three = cipher(rotation_three)
+    @cipher_one = cipher(rotation_one)
+    @cipher_two = cipher(rotation_two)
+    @cipher_three = cipher(rotation_three)
 
-    new_letters = encrypt_letters(letters, cipher_one, cipher_two, cipher_three)
+    new_letters = encrypt_letters
 
     puts new_letters.join
   end
 
-  def encrypt_letters(letters, cipher_one, cipher_two, cipher_three)
+  def encrypt_letters
     new_letters = []
 
     #If the letter's index number is a multiple of two, it is encrypted using cipher_one
     #If it's a multiple of three, it is encrypted with cipher_two
     #All other letters are encrypted with cipher_three
     #The letters are then shoveled into the new_letters array
-    letters.each_with_index do |letter,index|
+    @letters.each_with_index do |letter,index|
       if index % 2 == 0
-        new_letters << cipher_one[letter]
+        new_letters << @cipher_one[letter]
       elsif index % 3 == 0
-        new_letters << cipher_two[letter]
+        new_letters << @cipher_two[letter]
       else
-        new_letters << cipher_three[letter]
+        new_letters << @cipher_three[letter]
       end
     end
 
